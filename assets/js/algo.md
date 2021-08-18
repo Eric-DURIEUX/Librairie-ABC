@@ -1,3 +1,14 @@
+Quatre objectifs : 
+# Afficher les elements dans la page html, depuis JSON
+# ajout d'un article dans le tableau du panier
+# afficher chaque item présent dans le tableau du panier dans le panier physique/visible
+	## ajout direct ou incrémenter de 1 la quantité
+	## pouvoir retirer ou ajouter un produit depuis +/-
+	## pourvoir supprimer le/les produits
+# calculer les prix
+
+==========================================================================================
+
 # Définir le produit dans le HTML
 - Les informations des produits sont affichées sur la page html : nom, prix, descriptions etc.
 - Et certaines d'entre-elles sont également présentes dans leur balise en tant que valeur de propriétés (à récupérer dans le JS).
