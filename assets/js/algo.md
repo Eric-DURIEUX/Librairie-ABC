@@ -7,7 +7,7 @@ Quatre objectifs :
 	## pourvoir supprimer le/les produits
 # calculer les prix
 
-==========================================================================================
+=====================================================================================
 
 # Définir le produit dans le HTML
 - Les informations des produits sont affichées sur la page html : nom, prix, descriptions etc.
