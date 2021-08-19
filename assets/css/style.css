@@ -41,6 +41,11 @@ img.add{
     cursor: pointer;
 }
 
+button{
+    background-color: transparent;
+    border: none;
+}
+
 /*END MAIN STYLE*/
 
 p {

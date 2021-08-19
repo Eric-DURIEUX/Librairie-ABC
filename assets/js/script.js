@@ -64,30 +64,31 @@ fetch('assets/js/books.json')
 	let cart = []; // tableau contenant les produits ajoutés
 	let itemSelected = []; // tableau contenant ID et QT du produit choisi
 
-	// FONCTION AJOUTER AU PANIER//
-	let addToCart = ((ref) => {
+//////////////////////////// PARTIE LUCILE /////////////////////////////////
+	let addToCart = ((refProduct) => {
 		let pushInCart = true; // déclare à true, sinon undefined
 
-		// forEach sur cart, si 1er élément de chaque item de cart = ref, pushToCart = false.
+		// forEach sur cart, si 1er élément de chaque item de cart = refProduct, pushToCart = false.
 		cart.forEach((item)=> {
-			if (item[0] == ref){
+			if (item[0] == refProduct){
 				pushInCart = false;
-				// increaseQuantity()
-				item[1]++;
-				console.log(ref, item[0], 'D');
+				increaseQuantity(refProduct);
+				console.log(refProduct, item[0], 'D');
 			}
 		})
 
-		// Si pushInCart est resté à true, pousse les données Cart[]
+		// Si pushInCart est resté à true, pousse les données dans Cart[]
 		if (pushInCart) {
 			cart.push(itemSelected);
-			console.log(ref,  'A')
+			console.log(refProduct,  'A')
 		}
 
-		console.log(cart)
+	console.log(cart)
+		// console.log(cart)
 	}); // addToCart
 
 
+//////////////////////////// PARTIE SOLENE /////////////////////////////////
 	for (let i = 0; i < addBtn.length; i++) {
 		addBtn[i].addEventListener('click', (event)=>{
 			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
@@ -95,60 +96,64 @@ fetch('assets/js/books.json')
 		})
 	}
 
+	function clearCart() {
+	  cart = []
+	}
+
+
+	function increaseQuantity(refProduct){
+
+	  cart.forEach((item) => { 
+
+	   if (item[0] == refProduct) {
+	     item[1]++
+	   }
+	  }) 
+
+	}
+
+
+	function removeProductFromCart(refProduct){ 
+
+	  cart.forEach((item) => {
+	    if (item[0] == refProduct){
+
+	    	let indexToRemove = cart.indexOf(item);
+	    	cart.splice(indexToRemove, 1); 
+	    	/* Si on met "item", ça renvoie le tableau de l'item, et si on met "item[0]" ça renvoie la chaine de l'ID.
+	    	* Donc on utilise l'index car c'est un "Number" (slice n'accepte que les nombres pour ses deux premiers paramètres),
+					et ça indique en même temps sa position dans le tableau Cart ! 
+	    	*/
+
+	  		console.log(cart.indexOf(item)) // affiche l'index de l'élément appelé
+	    }
+	  })
+
+	}
+
+	//  utiliser cart.splice() >>> le problème c'est que ça se supprime pas en fonction de l'élément appelé par la fonction mais 
+	//  selon ce que j'ai mis dans les ()
+
+btnLess.addEventListener("click", (()=>{
+	removeProductFromCart("6005")
+	console.log(cart)
+})) 
+
+
+	function decreaseQuantity(refProduct){ 
+
+	  cart.forEach((item) => {
+	    if (item[0] == refProduct && item[1] > 1) {
+	      item[1] --
+	    }
+	     else if (item[0] == refProduct && item[1] == 1) {
+	      removeProductFromCart(refProduct)
+	    }
+	  })
+
+	}
+
 }) // then
-
-
-//////////////////////// les fonctions pour le panier 
- 
-let cart = [[6001, 2], [2002, 3], [2006, 1]];
-
-function clearCart() {
-  cart = []
-}
-
-
-function increaseQuantity(refProduct){
-
-  cart.forEach((item) => { 
-
-   if (item[0] == refProduct) {
-     item[1]++
-   }
-  }) 
-
-}
-
-
-function removeProductFromCart(refProduct){ 
-
-  cart.forEach((item) => {
-
-    if (item[0] == refProduct){
-      cart.splice(0, 1)
-    }
-  })
-
-} 
-//  utiliser cart.splice() >>> le problème c'est que ça se supprime pas en fonction de l'élément appelé par la fonction mais 
-//  selon ce que j'ai mis dans les ()
-
-removeProductFromCart('6001');
-console.log(cart)
-
-
-function decreaseQuantity(refProduct){ 
-
-  cart.forEach((item) => {
-    if (item[0] == refProduct && item[1] > 1) {
-      item[1] --
-    }
-     else if (item[0] == refProduct && item[1] == 1) {
-      removeProductFromCart(refProduct)
-    }
-  })
-
-}
-
 
 
 
