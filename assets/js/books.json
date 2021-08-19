@@ -1,12 +1,11 @@
 {
-    "Littérature": [
-        {
+    "litterature": [{
             "id": 6001,
             "original_title": "1984",
             "author": "George Orwell",
             "overview": "Année 1984 en Océanie. 1984 ? C'est en tout cas ce qu'il semble à Winston, qui ne saurait toutefois en jurer. Le passé a été oblitéré et réinventé, et les événements les plus récents sont susceptibles d'être modifiés. ",
             "poster_path": "assets/img/litt1984.jpg",
-            "price": "2.99"
+            "price": "2.99€"
         },
         {
             "id": 6002,
@@ -14,7 +13,7 @@
             "author": "Roman de J. D. Salinger",
             "overview": "Issu d'une famille aisée à New York, Holden Caulfield intègre le pensionnat Pencey Prep en Pennsylvanie. Mais, quand il est viré à la fin du semestre car il a « foiré en quatre matières », il s'en va plus tôt que prévu pour quelques jours d'aventure. ",
             "poster_path": "assets/img/littAttrapeCoeur.jpg",
-            "price": "2.50"
+            "price": "2.50€"
         },
         {
             "id": 6003,
@@ -22,7 +21,7 @@
             "author": "Kiran Millwood Hargrave",
             "overview": "1617, Vardø, au nord du cercle polaire, en Norvège. Maren Magnusdatter, vingt ans, regarde depuis le village la violente tempête qui s’abat sur la mer. ",
             "poster_path": "assets/img/littGraciees.jpg",
-            "price": "3"
+            "price": "3.99€"
         },
         {
             "id": 6004,
@@ -30,7 +29,7 @@
             "author": "Romain gary",
             "overview": "Avec l'amour maternel, la vie vous fait à l'aube une promesse qu'elle ne tient jamais. Et c'est ainsi que Romain Gary explique le titre qu'il donne à son autobiographie, La Promesse de l'aube. ",
             "poster_path": "assets/img/littPromessAube.jpg",
-            "price": "1.99"
+            "price": "1.99€"
         },
         {
             "id": 6005,
@@ -38,7 +37,7 @@
             "author": "Franz Kafka ",
             "overview": "Lorsque Gregor Samsa s'éveilla un matin au sortir de rêves agités, il se retrouva dans son lit changé en un énorme cancrelat. \"Que m'est-il arrivé ?\"pensa-t-il. Ce n'était pas un rêve.",
             "poster_path": "assets/img/littMetamorphose.jpg",
-            "price": "3.20"
+            "price": "3.20€"
         },
         {
             "id": 6006,
@@ -46,7 +45,7 @@
             "author": "Fedor Dostoïevski",
             "overview": "Dmitri, Ivan et Alexeï, trois êtres que tout sépare, partagent un même père, et avec lui une honte indicible : honte de l'origine, de la naissance... Honte d'exister, qui précipite Dimitri dans l'alcool et les excès de son père et assigne Ivan à une résignation désabusée.",
             "poster_path": "assets/img/littLesFreresKaramazov.jpg",
-            "price": "2.75"
+            "price": "2.75€"
         },
         {
             "id": 6007,
@@ -54,17 +53,17 @@
             "author": "Kjell Westo",
             "overview": "C'est à l'écart des bruits du monde, sur une île de l'archipel d'Helsinki, que le célèbre chef d'orchestre Thomas Brander choisit de se faire construire une somptueuse résidence secondaire : la Casa Triton.",
             "poster_path": "assets/img/lttCasaTriton.jpg",
-            "price": "2.99"
+            "price": "2.99€"
         }
     ],
-    "Science": [
-        {
+
+    "science": [{
             "id": 7001,
             "original_title": "La soumission librement consentie",
             "author": "Robert-Vincent Joule & Jean-Léon Beauvois",
             "overview": "Amener quelqu'un à faire en toute liberté ce qu'il doit faire est finalement moins compliqué qu'on ne le croit. Il existe aujourd'hui une somme impressionnante de connaissances scientifiques sur lesquelles on peut s'appuyer pour influencer les gens sans même qu'ils s'en rendent compte.",
             "poster_path": "assets/img/sciSoumission.jpg",
-            "price": ""
+            "price": "14.99€"
         },
         {
             "id": 7002,
@@ -72,7 +71,7 @@
             "author": "Hubert Reeves",
             "overview": "« Ce livre voudrait être une ode à l'univers. J'ai tenté de rendre hommage à sa splendeur et son intelligibilité, d'exprimer à la fois sa créativité, son inventivité, sa beauté et sa richesse. J'ai voulu donner à contempler et à comprendre. »",
             "poster_path": "assets/img/sciPoussiereEtoilesjpg.jpg",
-            "price": "11.50"
+            "price": "11.50€"
         },
         {
             "id": 7003,
@@ -80,7 +79,7 @@
             "author": "Alice Roberts",
             "overview": "Professeur Alice Roberts est médecin, spécialiste en anatomie et en anthropologie. Elle enseigne l'anatomie clinique, l'embryologie et l'anthropologie physique à l'université de Bristol. Elle est l'auteur de plusieurs livres médicaux et la productrice d'émissions scientifiques à la télévision britannique.",
             "poster_path": "assets/img/sciVisuel.jpg",
-            "price": "25"
+            "price": "24.99€"
         },
         {
             "id": 7004,
@@ -88,7 +87,7 @@
             "author": "Yuval Noah Harari",
             "overview": "Recommandé par Mark Zuckerberg le dernier essai de Yuval Noah Harari est un best-seller mondial . De l'âge de la pierre à la Silicon Valley, au carrefour des sciences et de la philosophie, 'Sapiens' interroge l'histoire globale de l'humanité à un rythme haletant.",
             "poster_path": "assets/img/sciSapiens.jpg",
-            "price": "14.99"
+            "price": "14.99€"
         },
         {
             "id": 7005,
@@ -96,7 +95,7 @@
             "author": "Friedrich Nietzsche",
             "overview": "Formulons-la, cette exigence nouvelle : nous avons besoin d'une critique des valeurs morales, il faut remettre une bonne fois en question la valeur de ces valeurs elles-mêmes - et pour ce, il faut avoir connaissance des conditions et des circonstances dans lesquelles elles ont poussé, à la faveur desquelles elles se sont développées et délacées ",
             "poster_path": "assets/img/sciMorale.jpg",
-            "price": "4.50"
+            "price": "4.50€"
         },
         {
             "id": 7006,
@@ -104,17 +103,17 @@
             "author": "Yuval Noah Harari",
             "overview": "Que deviendront nos démocraties quand Google et Facebook connaîtront nos goûts et nos préférences politiques mieux que nous-mêmes ? Qu'adviendra-t-il de l'Etat providence lorsque nous, les humains, serons évincés du marché de l'emploi par des ordinateurs plus performants ? Quelle utilisation certaines religions feront-elles de la manipulation génétique ?",
             "poster_path": "assets/img/sciHomoDeus.jpg",
-            "price": "14.99"
+            "price": "14.99€"
         }
     ],
-    "Histoire": [
-        {
+
+    "histoire": [{
             "id": 8001,
             "original_title": "Les Piliers de la Terre",
             "author": "Ken  Follet",
             "overview": "Dans l'Angleterre du xiie siècle ravagée par la guerre et la famine, des êtres luttent pour s'assurer le pouvoir, la gloire, la sainteté, l'amour, ou simplement de quoi survivre. Les batailles sont féroces, les hasards prodigieux, la nature cruelle. Les fresques se peignent à coups d'épée, les destins se taillent à coups de hache et les cathédrales se bâtissent à coups de miracles. et de saintes ruses. La haine règne, mais l'amour aussi, malmené constamment, blessé parfois, mais vainqueur enfin quand un Dieu, à la vérité souvent trop distrait, consent à se laisser toucher par la foi des hommes",
             "poster_path": "assets/img/H-G_Les_Piliers_de_la_terre.jpeg",
-            "price": "6.00"
+            "price": "6.00€"
         },
         {
             "id": 8002,
@@ -122,7 +121,7 @@
             "author": "Hubert Reeves",
             "overview": "L'Histoire de France est jalonnée de longues époques et d'autant de grands événements et bouleversements politiques, sociaux, économiques qui ont fait la diversité et la richesse de son patrimoine. Depuis le paléolithique jusqu'à la Ve République instaurée par de Gaulle, ce livre relate plus de 3 millions d'années d'existence. Retraçant entre autres la période gallo-romaine, le siècle des Lumières, la Révolution française, les années 1930 ou encore les guerres mondiales, voici un panorama de l'Histoire de France.",
             "poster_path": "assets/img/H-G_Le-grand-livre-de-l-histoire-de-france-expliquee-a-tous.jpg",
-            "price": "11.50"
+            "price": "11.50€"
         },
         {
             "id": 8003,
