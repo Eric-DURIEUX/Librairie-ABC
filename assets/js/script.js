@@ -1,12 +1,12 @@
-fetch('books.json')
+fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-  jsonBooks.results.map((book) => {
+  jsonBooks.policier.map((book) => {
 
     let title = book.original_title;
     let overview = book.overview;
     let poster = book.poster_path;
-    let vote = book.vote_average;
+    let price = book.price;
   
     
     let bookElToInject = `
