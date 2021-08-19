@@ -1,9 +1,12 @@
+console.log("test")
+
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-  jsonBooks.policier.map((book) => {
+  jsonBooks.Histoire.map((book) => {
 
     let title = book.original_title;
+    let author = book.author;
     let overview = book.overview;
     let poster = book.poster_path;
     let price = book.price;
@@ -24,7 +27,7 @@ fetch('assets/js/books.json')
       </div>
     </div>
   `;
-    document.getElementById('filmTable').innerHTML += bookElToInject;
+    // document.getElementById('filmTable').innerHTML += bookElToInject;
       
   })
 })
