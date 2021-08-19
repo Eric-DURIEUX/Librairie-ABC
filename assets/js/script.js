@@ -1,13 +1,17 @@
-fetch('books.json')
+console.log("test")
+fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-  jsonBooks.results.map((book) => {
+
+
+  jsonBooks.Histoire.map((book) => {
+  	console.log(jsonBooks.Histoire)
 
     let title = book.original_title;
+    let author = book.author;
     let overview = book.overview;
     let poster = book.poster_path;
-    let vote = book.vote_average;
-  
+    let price = book.price;
     
     let bookElToInject = `
     <div class='col-12 col-sm-6 col-xl-4 mb-3'>
@@ -24,7 +28,7 @@ fetch('books.json')
       </div>
     </div>
   `;
-    document.getElementById('filmTable').innerHTML += bookElToInject;
+    // document.getElementById('filmTable').innerHTML += bookElToInject;
       
   })
 })
