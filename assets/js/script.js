@@ -11,7 +11,7 @@ fetch('assets/js/books.json')
 	let histoireList = document.querySelector("#history");
 	let scienceList = document.querySelector("#science");
 
-	// récupération des données
+	// récupération des données JSON
 	let histoireData = jsonBooks.histoire;
 	let litteratureData = jsonBooks.litterature;
 	let scienceData = jsonBooks.science;
@@ -30,6 +30,7 @@ fetch('assets/js/books.json')
 		  	let bookElToInject = `
 		  	<div class='col-12 col-sm-6 col-xl-4 mb-3'>
 		  	  <div class='row no-gutters'>
+		  		<div class="col-12 text-end"><button class='add'><img src="assets/img/bag-plus.svg" alt="Logo ajouter au panier"></button></div>
 		  	    <div class='col-md-5'>
 		  	      <img class='img-fluid' src='${poster}' />
 		  	    </div>
@@ -46,7 +47,6 @@ fetch('assets/js/books.json')
 
   		})// map
 
-
 	} // function
 
 	ulContent(litteratureData, litteratureList)
@@ -55,4 +55,11 @@ fetch('assets/js/books.json')
 	ulContent(jeunesseData, jeunesseList)
 	ulContent(scienceData, scienceList)
 
+	let addBtn = $('.add');
+	console.log(addBtn)
+	addBtn.on('click', ()=>{
+		
+		// ouvre le 
+
+	}) // ADD event
 }) // then

@@ -22,6 +22,12 @@
 
 	li{list-style: none; }
 
+/*button add to bag*/
+	button{
+		border: none;
+		background-color: transparent;
+	}
+
 /*synopsis*/
 	#synopsis{
 		display: -webkit-box;
@@ -29,6 +35,4 @@
 		-webkit-line-clamp: 3;
 		overflow: hidden;
 	}
-
-
 /*END MAIN STYLE*/
