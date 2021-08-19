@@ -90,13 +90,15 @@ function removeProductFromCart(refProduct){
   cart.forEach((item) => {
 
     if (item[0] == refProduct){
-      cart[1] = []
+      cart.splice(0, 1)
     }
   })
 
-} // ici ça supprime le contenu du tableau et pas le tableau en lui-même
+} 
+//  utiliser cart.splice() >>> le problème c'est que ça se supprime pas en fonction de l'élément appelé par la fonction mais 
+//  selon ce que j'ai mis dans les ()
 
-removeProductFromCart('2002');
+removeProductFromCart('6001');
 console.log(cart)
 
 
