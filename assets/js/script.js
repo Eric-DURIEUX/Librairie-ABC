@@ -2,10 +2,7 @@ console.log("test")
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-
-
-  	console.log(jsonBooks.Histoire)
-  jsonBooks.histoire.map((book) => {
+  jsonBooks.policier.map((book) => {
 
     let title = book.original_title;
     let author = book.author;
