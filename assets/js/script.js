@@ -130,14 +130,11 @@ fetch('assets/js/books.json')
 	  })
 
 	}
-
-	//  utiliser cart.splice() >>> le problème c'est que ça se supprime pas en fonction de l'élément appelé par la fonction mais 
-	//  selon ce que j'ai mis dans les ()
-
-btnLess.addEventListener("click", (()=>{
-	removeProductFromCart("6005")
-	console.log(cart)
-})) 
+	// fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
+	btnLess.addEventListener("click", (()=>{
+		removeProductFromCart("6005")
+		console.log(cart)
+	})) 
 
 
 	function decreaseQuantity(refProduct){ 
