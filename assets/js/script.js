@@ -3,7 +3,7 @@ console.log("test")
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-  jsonBooks.histoire.map((book) => {
+  jsonBooks.jeunesse.map((book) => {
 
     let title = book.original_title;
     let author = book.author;
