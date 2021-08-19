@@ -1,4 +1,3 @@
-/////////////////////  ///////////////////////
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
@@ -57,12 +56,12 @@ fetch('assets/js/books.json')
 	ulContent(jeunesseData, jeunesseList)
 	ulContent(scienceData, scienceList)
 
-	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
-	let testUl = document.querySelector("#testUl"); // test
+// CART FUNCTIONS //
 
-	// let cart = [["6001", 2]]; // tableau ["6002", 1], ["4007", 1] contenant les produits ajoutés
+	// let cart = [["6001", 2], ["6002", 1], ["4007", 1]];
 	let cart = []; // tableau contenant les produits ajoutés
 	let itemSelected = []; // tableau contenant ID et QT du produit choisi
+	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
 
 //////////////////////////// PARTIE LUCILE /////////////////////////////////
 	let addToCart = ((refProduct) => {
@@ -83,12 +82,10 @@ fetch('assets/js/books.json')
 			console.log(refProduct,  'A')
 		}
 
-	console.log(cart)
-		// console.log(cart)
+		console.log(cart)
 	}); // addToCart
 
 
-//////////////////////////// PARTIE SOLENE /////////////////////////////////
 	for (let i = 0; i < addBtn.length; i++) {
 		addBtn[i].addEventListener('click', (event)=>{
 			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
@@ -96,6 +93,7 @@ fetch('assets/js/books.json')
 		})
 	}
 
+//////////////////////////// PARTIE SOLENE /////////////////////////////////
 	function clearCart() {
 	  cart = []
 	}
@@ -157,31 +155,31 @@ fetch('assets/js/books.json')
 
 
 
-///////////////////////////////////////////////
+// OPEN MODAL WINDOW //
 
-// modale pour le panier
-// Get the modal
-var modal = document.getElementById("myModal");
+	// modale pour le panier
+	// Get the modal
+	var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
