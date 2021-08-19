@@ -1,7 +1,7 @@
 console.log("test")
 
+////////////////////////
 
-/////////////////////  ///////////////////////
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
@@ -27,6 +27,7 @@ fetch('assets/js/books.json')
 		  	let overview = book.overview;
 		  	let poster = book.poster_path;
 		  	let price = book.price;
+        let refProduct = book.id;
 		  	
 		  	let bookElToInject = `
 		  	<div class='col-12 col-sm-6 col-xl-2 mb-3'>
@@ -58,12 +59,64 @@ fetch('assets/js/books.json')
 	ulContent(jeunesseData, jeunesseList)
 	ulContent(scienceData, scienceList)
 
-}) // then
-
-////////////////////////
 
 
+})
 
+
+//////////////////////// les fonctions pour le panier 
+ 
+let cart = [[6001, 2], [2002, 3], [2006, 1]];
+
+function clearCart() {
+  cart = []
+}
+
+
+function increaseQuantity(refProduct){
+
+  cart.forEach((item) => { 
+
+   if (item[0] == refProduct) {
+     item[1]++
+   }
+  }) 
+
+}
+
+
+function removeProductFromCart(refProduct){ 
+
+  cart.forEach((item) => {
+
+    if (item[0] == refProduct){
+      cart[1] = []
+    }
+  })
+
+} // ici ça supprime le contenu du tableau et pas le tableau en lui-même
+
+removeProductFromCart('2002');
+console.log(cart)
+
+
+function decreaseQuantity(refProduct){ 
+
+  cart.forEach((item) => {
+    if (item[0] == refProduct && item[1] > 1) {
+      item[1] --
+    }
+     else if (item[0] == refProduct && item[1] == 1) {
+      removeProductFromCart(refProduct)
+    }
+  })
+
+}
+
+
+
+
+///////////////////////////////////////////////
 
 // modale pour le panier
 // Get the modal
@@ -91,5 +144,3 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-
