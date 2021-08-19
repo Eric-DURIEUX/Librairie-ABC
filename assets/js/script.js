@@ -3,7 +3,7 @@ console.log("test")
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
-  jsonBooks.Histoire.map((book) => {
+  jsonBooks.histoire.map((book) => {
 
     let title = book.original_title;
     let author = book.author;
@@ -27,7 +27,7 @@ fetch('assets/js/books.json')
       </div>
     </div>
   `;
-    // document.getElementById('filmTable').innerHTML += bookElToInject;
+    document.getElementById('filmTable').innerHTML += bookElToInject;
       
   })
 })
