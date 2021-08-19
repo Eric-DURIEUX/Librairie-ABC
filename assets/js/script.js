@@ -119,13 +119,16 @@ fetch('assets/js/books.json')
 	    if (item[0] == refProduct){
 
 	    	let indexToRemove = cart.indexOf(item);
-	    	cart.splice(indexToRemove, 1); 
+	  		
+	  		console.log(cart.indexOf(item)) // affiche l'index de l'élément appelé AVANT sa suppression
+	  		
+	    	cart.splice(indexToRemove, 1); // suppression ici (du coup)
 	    	/* Si on met "item", ça renvoie le tableau de l'item, et si on met "item[0]" ça renvoie la chaine de l'ID.
 	    	* Donc on utilise l'index car c'est un "Number" (slice n'accepte que les nombres pour ses deux premiers paramètres),
 					et ça indique en même temps sa position dans le tableau Cart ! 
 	    	*/
+	  		console.log(cart.indexOf(item)) // affiche "-1" car après il n'exite plus
 
-	  		console.log(cart.indexOf(item)) // affiche l'index de l'élément appelé
 	    }
 	  })
 
