@@ -132,7 +132,7 @@ fetch('assets/js/books.json')
 	}
 	// fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
 	btnLess.addEventListener("click", (()=>{
-		removeProductFromCart("6005")
+		removeProductFromCart("6005") // correspond à "La Métamorphose"
 		console.log(cart)
 	})) 
 
