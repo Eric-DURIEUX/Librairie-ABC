@@ -23,9 +23,8 @@
 	li{list-style: none; }
 
 /*button add to bag*/
-	button{
-		border: none;
-		background-color: transparent;
+	img.add{
+		cursor: pointer;
 	}
 
 /*synopsis*/
@@ -35,4 +34,11 @@
 		-webkit-line-clamp: 3;
 		overflow: hidden;
 	}
+
+	/*TEST*/
+	.test{
+		width: 100%; height: 200px;
+		background-color:#e1e1e1;
+	}
+
 /*END MAIN STYLE*/
