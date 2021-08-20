@@ -34,6 +34,15 @@ li{list-style: none; }
 
 /*END MAIN STYLE*/
 
+img.add{
+    cursor: pointer;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
 p {
     font-size: 15px;
 }
@@ -51,10 +60,6 @@ body {
     margin-right: 10px;
 }
 
-button {
-    background: transparent;
-    border: none;
-}
 
 
 
@@ -102,3 +107,4 @@ button {
   .bg-blue {
     background-color: #59A5D8;
 }
+
