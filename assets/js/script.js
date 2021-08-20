@@ -199,16 +199,23 @@ window.onclick = function (event) {
 }
 
 
+
+
+
+
+
+
 //*******************TEST*******************//
 
-let btnPlus = document.getElementById("btnPlus");
-let btnLess = document.getElementById("btnLess");
+// let btnPlus = document.getElementById("btnPlus");
+// let btnLess = document.getElementById("btnLess");
 
 
-btnPlus.onclick = function increaseQuantity() {
+// btnPlus.onclick = function increaseQuantity() {
 
-}
+// }
 
-btnLess.onclick = function decreaseQuantity() {
+// btnLess.onclick = function decreaseQuantity() {
 
-}
+// }
+
