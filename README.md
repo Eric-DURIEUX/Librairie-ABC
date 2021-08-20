@@ -26,6 +26,11 @@ function increaseQuantity(refProduct){
     // augmente la quantité d'un produit du panier (dont la ref est 'refProduct')
 }
 
+function addProductToCart(refProduct){
+    // ajoute un produit au panier (dont la ref est 'refProduct') si il n'est pas présent. Sinon, on
+     appelle la fonction increaseQuantity(refProduct) si le produit existe déjà
+}
+
 function removeProductFromCart(refProduct){
     // supprime un produit du panier (dont la ref est 'refProduct')
 }
@@ -61,3 +66,10 @@ function createLineInModal(id){
 function getQuantity(refProduct){
     // retourne la quantité d'un produit du panier
 }
+<<<<<<< HEAD
+=======
+
+function getProduct(ref){
+    // retourne un objet produit (dont la ref est 'refProduct')
+}
+>>>>>>> fea82d99d9b900f7539f9e7a97d9d0e168e8b654
