@@ -37,7 +37,7 @@ li{list-style: none; }
 }
 
 /*button add to bag*/
-img.add{
+img.add, img.btnPlus, img.btnLess{
     cursor: pointer;
 }
 
@@ -154,5 +154,4 @@ main{
         width: 100%;
         margin-right: auto;
         margin-left: auto;
-    }    
-}
+    }

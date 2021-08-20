@@ -61,33 +61,47 @@ fetch('assets/js/books.json')
 	// let cart = [["6001", 2], ["6002", 1], ["4007", 1]];
 	let cart = []; // tableau contenant les produits ajoutés
 	let itemSelected = []; // tableau contenant ID et QT du produit choisi
-
 /******* PARTIE LUCILE *******/
 	// function add to cart
 	let addToCart = ((refProduct) => {
 		let pushInCart = true; // déclare à true, sinon undefined
 
-		// forEach sur cart, si 1er élément de chaque item de cart = refProduct, pushToCart = false.
-		cart.forEach((item)=> {
+		// forEach sur cart, si 1er élément de chaque item est présent(cart = refProduct), ne pas pousser (pushToCart = false).
+		cart.forEach((item, index)=> {
 			if (item[0] == refProduct){
 				pushInCart = false;
 				increaseQuantity(refProduct);
-				console.log(refProduct, item[0], 'D');
+			console.log(refProduct,  'DA');
+			// qtCart[index].innerHTML = `Quantité : ${itemSelected[1]}`;
 			}
 		})
 
 		// Si pushInCart est resté à true, pousse les données dans Cart[]
 		if (pushInCart) {
 			cart.push(itemSelected);
-			console.log(refProduct,  'A')
+			console.log(refProduct,  'A');
+
+			articleContainer.innerHTML += `
+			<div>
+				<p class="m-0"><span class="idCart">${itemSelected[0]}</span></p>
+	            <div class="d-flex align-item-center mb-5">
+	                <h5 class="m-0">
+	                    <span class="qtCart">Quantité : ${itemSelected[1]} </span>
+	                    <img src="assets/img/iconPlus.png" class="btnPlus" data-id="${itemSelected[0]}">
+	                    <img src="assets/img/iconMoins.png" class="btnLess" data-id="${itemSelected[0]}">
+	                </h5>
+	            </div>
+            </div>`;
 		}
 
 		console.log(cart)
+	
 	}); // addToCart
 
 	// function to show the badge on cart
+
 	let notifContainer = document.querySelector('#notif')
-	let badgeCart = ()=>{
+	let badgeCart = () => {
 		(cart.length > 0) ? notifContainer.classList.replace('d-none', 'notif') : notifContainer.classList.replace('notif', 'd-none');
 	}
 
@@ -97,18 +111,29 @@ fetch('assets/js/books.json')
 	  cart = []
 	}
 
+	function decreaseQuantity(refProduct){ 
 
-	function increaseQuantity(refProduct){
-
-	  cart.forEach((item) => { 
-
-	   if (item[0] == refProduct) {
-	     item[1]++
-	   }
-	  }) 
-
+	  cart.forEach((item) => {
+	    if (item[0] == refProduct && item[1] > 1) {
+	      item[1] --
+	    } else if (item[0] == refProduct && item[1] == 1) {
+	      removeProductFromCart(refProduct)
+	    }
+	  })
 	}
 
+	function increaseQuantity(refProduct){
+	let qtCart = document.querySelectorAll('.qtCart');
+	
+	cart.forEach((item, index) => { 
+	
+		if (item[0] == refProduct) {
+			item[1]++
+			// qtCart[index].innerHTML = `Quantité : ${itemSelected[1]}`;
+		}
+	}) 
+
+	}
 
 	function removeProductFromCart(refProduct){ 
 
@@ -123,32 +148,36 @@ fetch('assets/js/books.json')
 
 	}
 
-
-	function decreaseQuantity(refProduct){ 
-
-	  cart.forEach((item) => {
-	    if (item[0] == refProduct && item[1] > 1) {
-	      item[1] --
-	    }
-	     else if (item[0] == refProduct && item[1] == 1) {
-	      removeProductFromCart(refProduct)
-	    }
-	  })
-
-	}
-
 /////////////// ADD FUNCTION TO BUTTON //////////////////
 	// add to cart
 	let articleContainer = document.querySelector('#articleInCart')
 	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
+	let idCart = document.querySelectorAll('idCart');
 	for (let i = 0; i < addBtn.length; i++) {
 		addBtn[i].addEventListener('click', (event)=>{
 			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
 			addToCart(itemSelected[0]);
 			badgeCart();
 
-			articleContainer.innerHTML = 'test';
 		})
+	}
+
+	let btnLess = document.querySelectorAll('.btnLess')
+	for (let i = 0; i < btnLess.length; i++) {
+		btnLess[i].addEventListener("click", ((event)=>{
+			refProduct = event.target.dataset.id;
+			decreaseQuantity(refProduct);
+			console.log(cart, refProduct)
+		}))
+	}
+
+	let btnPlus = document.querySelectorAll('.btnPlus')
+	for (let i = 0; i < btnPlus.length; i++) {
+		btnPlus[i].addEventListener("click", ((event)=>{
+			refProduct = event.target.dataset.id;
+			increaseQuantity(refProduct);
+			console.log(cart, refProduct)
+		}))
 	}
 
 	// delete all content from cart
@@ -158,14 +187,6 @@ fetch('assets/js/books.json')
 		badgeCart();
 		console.log(cart)
 	})
-
-	// test : remove one product from cart
-	// fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
-	let btnLess = document.querySelector('#btnLess')
-	btnLess.addEventListener("click", (()=>{
-		removeProductFromCart("6005") // correspond à "La Métamorphose"
-		console.log(cart)
-	}))
 
 }) // then
 
