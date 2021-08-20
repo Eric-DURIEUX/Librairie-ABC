@@ -218,6 +218,7 @@ btnPlus.onclick = function increaseQuantity() {
 btnLess.onclick = function decreaseQuantity() {
 
 }
+// Pas sur du tout
 let ref = book.id ; 
 
 function getProduct(ref){
