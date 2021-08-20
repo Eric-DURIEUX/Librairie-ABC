@@ -58,9 +58,8 @@ h5 {
     font-size: 20px;
 }
 
-body {
-    margin-left: 10px;
-    margin-right: 10px;
+main{
+    margin: 0 ;
 }
 
 /*END MAIN STYLE*/
@@ -111,4 +110,34 @@ body {
 
   .bg-blue {
     background-color: #59A5D8;
+}
+
+/*NAVBAR MOBIL UNDER 992px*/
+@media (min-width: 300px){
+    #nav-container{
+        justify-items: center;
+        grid-template-columns: 17% 66% 17%;
+        grid-template-areas: "navButton navLogo navBag";
+    }
+
+    #nav-container>a:nth-child(1){grid-area: navLogo;}
+    #nav-container>div:nth-child(2){grid-area: navButton;}
+    #nav-container>div:nth-child(4){grid-area: navBag;}
+
+    #navBtn{
+        width: 30px; height: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    #nav-container{
+        display: flex;
+        flex-wrap: inherit;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }    
 }
