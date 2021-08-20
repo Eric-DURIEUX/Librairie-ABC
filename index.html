@@ -45,15 +45,18 @@
                         </li>
                     </ul>
                 </div>
-                <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="bag">
-                    <button id="myBtn"><a href="#bag"><img src="assets/img/bag.svg" alt="panier" width="50"></a> </button>                                     
+                    
+                    <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="bag">
+                        <button id="myBtn" class="position-relative">
+                            <a href="#bag"><img src="assets/img/bag.svg" alt="panier" width="50"></a>
+                            <span id="notif" class="d-none"></span>
+                        </button>                                     
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
     <!-- Fin de la Nav Barre Lucas  -->
-
-   
 
     <!-- Open The Modal -->
     <!-- The Modal -->
@@ -62,35 +65,35 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>PANIER il faut y ajouter son contenu</p>
-            <p id="articleInCart">ICI ARTICLE</p>
+            <div id="articleInCart">ICI ARTICLE</div>
             <h5>quantité<button id="btnPlus"><img src="assets/img/iconPlus.png"></button><button id="btnLess"><img src="assets/img/iconMoins.png"></button></h5>
             <p>TOTAL : </p>
-            <div><button id="btnBuy">ACHETER <img src="assets/img/iconCart.png"></button></div>
+            <div><button id="btnBuy">ACHETER <img src="assets/img/iconCart.png"></button>
+            <button id="btnDeleteAll">SUPPRIMER LE PANIER <img src="assets/img/trash.svg"></button></div>
         </div>
     </div>
     <!-- Open The Modal -->
     
-<main id="mainContainer" class="d-flex flex-column justify-content-center align-items-center">
+    <main id="mainContainer" class="d-flex flex-column justify-content-center align-items-center mx-5">
+        <h2 class="mt-5">Littérature</h2>
+        <div id="litterature" class="row"></div>
+            
 
-    <h2>Littérature</h2>
-    <div id="litterature" class="row"></div>
-        
+        <h2 class="mt-5">Policier</h2>
+        <div id="thriller" class="row"></div>
+            
 
-    <h2>Policier</h2>
-    <div id="thriller" class="row"></div>
-        
+        <h2 class="mt-5">Jeunesse</h2>
+        <div id="youth" class="row"></div>
+            
 
-    <h2>Jeunesse</h2>
-    <div id="youth" class="row"></div>
-        
+        <h2 class="mt-5">Histoire du monde</h2>
+        <div id="history" class="row"></div>
+            
 
-    <h2>Histoire du monde</h2>
-    <div id="history" class="row"></div>
-        
-
-    <h2>Sciences et sciences humaines</h2>
-    <div id="science" class="row"></div>
-</main>
+        <h2 class="mt-5">Sciences et sciences humaines</h2>
+        <div id="science" class="row"></div>
+    </main>
 
     <!-- Footer -->
 
