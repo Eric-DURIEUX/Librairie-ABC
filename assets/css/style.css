@@ -1,0 +1,38 @@
+/*STYLE PRINCIPAL*/
+
+/*h2 décoration*/
+h2 {
+    affichage : flexible ;
+    align-items : center;
+    justifier-contenu : centre;
+    remplissage :  0  50 px ;
+
+    font-weight :  400 ;
+    couleur d'arrière-plan :  # fff ;
+}
+
+h2 : après {
+    contenu :  '' ;
+    position : absolue;
+    index z :  -99 ; /*laisser le :after être sous le titre*/
+    
+    largeur :  70 % ; hauteur :  1 px ;
+    background-color :  # 000 ;
+}
+
+li { style de liste : aucun; }
+
+/*bouton ajouter au panier*/
+bouton {
+    bordure : aucune;
+    background-color : transparent;
+}
+
+/*synopsis*/
+# résumé {
+    affichage : -webkit-box;
+    -webkit-box-orient : vertical;
+    -webkit-line-clamp :  3 ;
+    débordement : caché;
+}
+/*FIN DU STYLE PRINCIPAL*/
