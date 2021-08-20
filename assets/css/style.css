@@ -112,3 +112,16 @@ body {
   .bg-blue {
     background-color: #59A5D8;
 }
+/* footer */
+a {
+    color: white;
+}
+footer {
+    background-color: #59A5D8;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8em;
+}
