@@ -49,7 +49,10 @@
                         </ul>
                     </div>
                     <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="bag">
-                        <button id="myBtn"><a href="#bag"><img src="assets/img/bag.svg" alt="panier" width="50"></a></button>                                     
+                        <button id="myBtn" class="position-relative">
+                            <a href="#bag"><img src="assets/img/bag.svg" alt="panier" width="50"></a>
+                            <span id="notif" class="d-none"></span>
+                        </button>                                     
                     </div>
                 </div>
             </div>
@@ -64,10 +67,11 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>PANIER il faut y ajouter son contenu</p>
-            <p id="articleInCart">ICI ARTICLE</p>
+            <div id="articleInCart">ICI ARTICLE</div>
             <h5>quantité<button id="btnPlus"><img src="assets/img/iconPlus.png"></button><button id="btnLess"><img src="assets/img/iconMoins.png"></button></h5>
             <p>TOTAL : </p>
-            <div><button id="btnBuy">ACHETER <img src="assets/img/iconCart.png"></button></div>
+            <div><button id="btnBuy">ACHETER <img src="assets/img/iconCart.png"></button>
+            <button id="btnDeleteAll">SUPPRIMER LE PANIER <img src="assets/img/trash.svg"></button></div>
         </div>
     </div>
     <!-- Open The Modal -->

@@ -56,14 +56,14 @@ fetch('assets/js/books.json')
 	ulContent(jeunesseData, jeunesseList)
 	ulContent(scienceData, scienceList)
 
-// CART FUNCTIONS //
+//////////////////////// FUNCTIONS TO CALL /////////////////////////
 
 	// let cart = [["6001", 2], ["6002", 1], ["4007", 1]];
 	let cart = []; // tableau contenant les produits ajoutés
 	let itemSelected = []; // tableau contenant ID et QT du produit choisi
-	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
 
-//////////////////////////// PARTIE LUCILE /////////////////////////////////
+/******* PARTIE LUCILE *******/
+	// function add to cart
 	let addToCart = ((refProduct) => {
 		let pushInCart = true; // déclare à true, sinon undefined
 
@@ -85,15 +85,14 @@ fetch('assets/js/books.json')
 		console.log(cart)
 	}); // addToCart
 
-
-	for (let i = 0; i < addBtn.length; i++) {
-		addBtn[i].addEventListener('click', (event)=>{
-			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
-			addToCart(itemSelected[0]);
-		})
+	// function to show the badge on cart
+	let notifContainer = document.querySelector('#notif')
+	let badgeCart = ()=>{
+		(cart.length > 0) ? notifContainer.classList.replace('d-none', 'notif') : notifContainer.classList.replace('notif', 'd-none');
 	}
 
-//////////////////////////// PARTIE SOLENE /////////////////////////////////
+
+/******* PARTIE SOLENE *******/
 	function clearCart() {
 	  cart = []
 	}
@@ -117,25 +116,12 @@ fetch('assets/js/books.json')
 	    if (item[0] == refProduct){
 
 	    	let indexToRemove = cart.indexOf(item);
-	  		
-	  		console.log(cart.indexOf(item)) // affiche l'index de l'élément appelé AVANT sa suppression
-	  		
-	    	cart.splice(indexToRemove, 1); // suppression ici (du coup)
-	    	/* Si on met "item", ça renvoie le tableau de l'item, et si on met "item[0]" ça renvoie la chaine de l'ID.
-	    	* Donc on utilise l'index car c'est un "Number" (slice n'accepte que les nombres pour ses deux premiers paramètres),
-					et ça indique en même temps sa position dans le tableau Cart ! 
-	    	*/
-	  		console.log(cart.indexOf(item)) // affiche "-1" car après il n'exite plus
+	    	cart.splice(indexToRemove, 1);
 
 	    }
 	  })
 
 	}
-	// fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
-	btnLess.addEventListener("click", (()=>{
-		removeProductFromCart("6005") // correspond à "La Métamorphose"
-		console.log(cart)
-	})) 
 
 
 	function decreaseQuantity(refProduct){ 
@@ -151,8 +137,37 @@ fetch('assets/js/books.json')
 
 	}
 
-}) // then
+/////////////// ADD FUNCTION TO BUTTON //////////////////
+	// add to cart
+	let articleContainer = document.querySelector('#articleInCart')
+	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
+	for (let i = 0; i < addBtn.length; i++) {
+		addBtn[i].addEventListener('click', (event)=>{
+			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
+			addToCart(itemSelected[0]);
+			badgeCart();
 
+			articleContainer.innerHTML = 'test';
+		})
+	}
+
+	// delete all content from cart
+	let btnDeleteAll = document.querySelector('#btnDeleteAll')
+	btnDeleteAll.addEventListener('click', ()=>{
+		clearCart();
+		badgeCart();
+		console.log(cart)
+	})
+
+	// test : remove one product from cart
+	// fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
+	let btnLess = document.querySelector('#btnLess')
+	btnLess.addEventListener("click", (()=>{
+		removeProductFromCart("6005") // correspond à "La Métamorphose"
+		console.log(cart)
+	}))
+
+}) // then
 
 
 // OPEN MODAL WINDOW //
