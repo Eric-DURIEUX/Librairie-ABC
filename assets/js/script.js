@@ -29,7 +29,7 @@ fetch('assets/js/books.json')
 		  	
 		  	// items à ajouter
 		  	let bookElToInject = `
-		  	<div id="${id}" class='col-12 col-sm-6 col-xl-4 mb-3'>
+		  	<div id="${id}" class='col-12 col-sm-6 col-xl-2 mb-3'>
 		  	  <div class='row no-gutters'>
 		  		<div class="col-12 text-end"><img src="assets/img/bag-plus.svg" alt="Logo ajouter au panier" class='add' data-id="${id}" data-qt="1"></div>
 		  	    <div class='col-md-5'>
