@@ -1,3 +1,4 @@
+window.addEventListener("DOMContentLoaded", (event) => {
 fetch('assets/js/books.json')
 .then(response => response.json())
 .then((jsonBooks) => {
@@ -71,8 +72,7 @@ fetch('assets/js/books.json')
 			if (item[0] == refProduct){
 				pushInCart = false;
 				increaseQuantity(refProduct);
-			console.log(refProduct,  'DA');
-			// qtCart[index].innerHTML = `Quantité : ${itemSelected[1]}`;
+				console.log(refProduct,  'DA');
 			}
 		})
 
@@ -80,26 +80,36 @@ fetch('assets/js/books.json')
 		if (pushInCart) {
 			cart.push(itemSelected);
 			console.log(refProduct,  'A');
-
-			articleContainer.innerHTML += `
-			<div>
-				<p class="m-0"><span class="idCart">${itemSelected[0]}</span></p>
-	            <div class="d-flex align-item-center mb-5">
-	                <h5 class="m-0">
-	                    <span class="qtCart">Quantité : ${itemSelected[1]} </span>
-	                    <img src="assets/img/iconPlus.png" class="btnPlus" data-id="${itemSelected[0]}">
-	                    <img src="assets/img/iconMoins.png" class="btnLess" data-id="${itemSelected[0]}">
-	                </h5>
-	            </div>
-            </div>`;
 		}
 
 		console.log(cart)
 	
 	}); // addToCart
 
-	// function to show the badge on cart
+	let showProductInCart = (refProduct) => {
+	
+	let articleContent;
+	let articleInCart = document.querySelector('#articleInCart');
+		
+		cart.forEach((item, index)=>{
+				articleContent += `
+					<div>
+						<p class="m-0"><span class="idCart">${item[0]}</span></p>
+			            <div class="d-flex align-item-center mb-5">
+			                <h5 class="m-0">
+			                    <span class="qtCart">Quantité : ${item[1]} </span>
+			                    <img src="assets/img/iconPlus.png" class="btnPlus" data-id="${item[0]}">
+			                    <img src="assets/img/iconMoins.png" class="btnLess" data-id="${item[0]}">
+			                </h5>
+			            </div>
+		            </div>`; 
+		}) // forEach
 
+		articleInCart.innerHTML = articleContent;
+
+    } // show
+
+	// function to show the badge on cart
 	let notifContainer = document.querySelector('#notif')
 	let badgeCart = () => {
 		(cart.length > 0) ? notifContainer.classList.replace('d-none', 'notif') : notifContainer.classList.replace('notif', 'd-none');
@@ -147,16 +157,15 @@ fetch('assets/js/books.json')
 	}
 
 /////////////// ADD FUNCTION TO BUTTON //////////////////
-	// add to cart
-	let articleContainer = document.querySelector('#articleInCart')
+	// add to car	
 	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
 	let idCart = document.querySelectorAll('idCart');
 	for (let i = 0; i < addBtn.length; i++) {
 		addBtn[i].addEventListener('click', (event)=>{
 			itemSelected = [event.target.dataset.id, parseInt(event.target.dataset.qt)];
 			addToCart(itemSelected[0]);
+			showProductInCart(itemSelected[0])
 			badgeCart();
-
 		})
 	}
 
@@ -189,7 +198,7 @@ fetch('assets/js/books.json')
 	})
 
 }) // then
-
+}) // DOMContentLoaded
 
 // OPEN MODAL WINDOW //
 
