@@ -1,18 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>Librairie ABC</title>
 </head>
-<body>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+    <!-- Début Header Lucas -->
+    <div class="container-fluid"></div>
+    <header>
+        <!-- Début Nav Barre Lucas  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="logo" width="150"></a>
+
+                <button class="navbar-toggler bg-blue" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#litterature"><span
+                                    style="color: black;">Littérature</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#thriller"><span style="color: black;">Policier</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#youth"><span style="color: black;">Jeunesse</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#history"><span
+                                    style="color: black;">Histoire-Géographie</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#science"><span style="color: black;">Science</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="bag">
+                    <button id="myBtn" class="position-relative">
+                        <a href="#bag"><img src="assets/img/bag.svg" alt="panier" width="50"></a>
+                        <span id="notif" class="d-none"></span>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Fin de la Nav Barre Lucas  -->
+
+    <!-- Open The Modal -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>PANIER il faut y ajouter son contenu</p>
+            <div id="articleInCart">ICI ARTICLE</div>
+            <h5>quantité<button id="btnPlus"><img src="assets/img/iconPlus.png"></button><button id="btnLess"><img
+                        src="assets/img/iconMoins.png"></button></h5>
+            <p>TOTAL : </p>
+            <div><button id="btnBuy">ACHETER <img src="assets/img/iconCart.png"></button>
+                <button id="btnDeleteAll">SUPPRIMER LE PANIER <img src="assets/img/trash.svg"></button>
+            </div>
+        </div>
+    </div>
+    <!-- Open The Modal -->
+
+    <main id="mainContainer" class="d-flex flex-column justify-content-center align-items-center mx-5">
+        <h2 class="mt-5">Littérature</h2>
+        <div id="litterature" class="row"></div>
+
+
+        <h2 class="mt-5">Policier</h2>
+        <div id="thriller" class="row"></div>
+
+
+        <h2 class="mt-5">Jeunesse</h2>
+        <div id="youth" class="row"></div>
+
+
+        <h2 class="mt-5">Histoire du monde</h2>
+        <div id="history" class="row"></div>
+
+
+        <h2 class="mt-5">Sciences et sciences humaines</h2>
+        <div id="science" class="row"></div>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="page-footer font-small blue pt-4">
+
+        <div class="container">
+
+            <!--row -->
+            <div class="row">
+
+
+                <!--column -->
+                <div class="col-12 col-lg-3 mb-md-0 mt-3">
+
+                    <!-- Content -->
+                    <a class="text-uppercase"><img class="img-footer" img src="assets/img/logo.png"
+                            alt="logo - Librairie ABC" style="width:50%; height:auto; margin-left: 0"></a><br>
+
+
+                </div>
+                <!--column -->
+                <div class="col-12 col-lg-2 mb-md-0 mb-3">
+
+
+                    <a href="legalNotice.html" target="_blank">Mentions légales</a>
+
+                </div>
+
+
+                <!--column -->
+                <div class="col-12 col-lg-2 mb-md-0 mb-3">
+                    <p>Addresse:<br> 9 Rue Victor Hugo<br>75000 Paris, FRANCE<br>
+                        <a href="tel:+33126121314">Tel: 01.26.12.13.14 (fr)</a>
+                    </p>
+                </div>
+                <!--column -->
+                <div class="col-12 col-lg-2 mb-md-0 mb-3">
+
+
+                    <a>Contact<br><a href="mailto:contact@librairieabc.fr">contact@librairieabc.fr</a>
+                </div>
+                <!--column -->
+                <div class="col-12 col-lg-3 mb-md-0 mb-3">
+
+                    <a href="https://twitter.com">
+                        <img src="assets/img/pngegg.png" alt="logo twitter bleu" id="logotwitter" width="130">
+                    </a>
+                    <a href="https://banque.com">
+                        <img src="assets/img/banque.png" alt="logo banque bleu" id="logobanue" width="100">
+                    </a>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Copyright -->
+                <div class="col-12 mb-md-0 mb-3footer-copyright text-center py-4">© 2021 Copyright: </br> AuPainChaud.
+                    All rights reserved.
+                </div>
+                <!-- Copyright -->
+
+            </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
