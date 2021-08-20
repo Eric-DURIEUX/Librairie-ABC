@@ -66,7 +66,7 @@ fetch('assets/js/books.json')
 
 //////////////////////// les fonctions pour le panier 
  
-let cart = [[6001, 2], [2002, 3], [2006, 1]];
+let cart = [[6001, 2], [2002, 3], [2006, 1], [6005, 1]];
 
 function clearCart() {
   cart = []
@@ -87,19 +87,29 @@ function increaseQuantity(refProduct){
 
 function removeProductFromCart(refProduct){ 
 
-  cart.forEach((item) => {
+	cart.forEach((item) => {
+	  if (item[0] == refProduct){
 
-    if (item[0] == refProduct){
-      cart.splice(0, 1)
-    }
-  })
+		  let indexToRemove = cart.indexOf(item);
+			
+			console.log(cart.indexOf(item)) // affiche l'index de l'élément appelé AVANT sa suppression
+			
+		  cart.splice(indexToRemove, 1); // suppression ici (du coup)
+		  /* Si on met "item", ça renvoie le tableau de l'item, et si on met "item[0]" ça renvoie la chaine de l'ID.
+		  * Donc on utilise l'index car c'est un "Number" (slice n'accepte que les nombres pour ses deux premiers paramètres),
+				  et ça indique en même temps sa position dans le tableau Cart ! 
+		  */
+			console.log(cart.indexOf(item)) // affiche "-1" car après il n'exite plus
 
-} 
-//  utiliser cart.splice() >>> le problème c'est que ça se supprime pas en fonction de l'élément appelé par la fonction mais 
-//  selon ce que j'ai mis dans les ()
+	  }
+	})
 
-removeProductFromCart('6001');
-console.log(cart)
+  }
+  // fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
+  btnLess.addEventListener("click", (()=>{
+	  removeProductFromCart("6005") // correspond à "La Métamorphose"
+	  console.log(cart)
+  })) 
 
 
 function decreaseQuantity(refProduct){ 
