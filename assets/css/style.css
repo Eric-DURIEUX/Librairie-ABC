@@ -93,6 +93,8 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
   }
   
   .close:hover,
