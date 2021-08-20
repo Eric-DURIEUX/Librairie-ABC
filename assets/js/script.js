@@ -123,13 +123,11 @@ fetch('assets/js/books.json')
 	}
 
 	function increaseQuantity(refProduct){
-	let qtCart = document.querySelectorAll('.qtCart');
 	
 	cart.forEach((item, index) => { 
 	
 		if (item[0] == refProduct) {
 			item[1]++
-			// qtCart[index].innerHTML = `Quantité : ${itemSelected[1]}`;
 		}
 	}) 
 
@@ -162,6 +160,7 @@ fetch('assets/js/books.json')
 		})
 	}
 
+	// decrease quantity
 	let btnLess = document.querySelectorAll('.btnLess')
 	for (let i = 0; i < btnLess.length; i++) {
 		btnLess[i].addEventListener("click", ((event)=>{
@@ -171,6 +170,7 @@ fetch('assets/js/books.json')
 		}))
 	}
 
+	// increase quantity
 	let btnPlus = document.querySelectorAll('.btnPlus')
 	for (let i = 0; i < btnPlus.length; i++) {
 		btnPlus[i].addEventListener("click", ((event)=>{
