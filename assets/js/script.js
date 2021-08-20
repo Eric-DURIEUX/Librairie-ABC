@@ -106,10 +106,6 @@ function removeProductFromCart(refProduct){
 
   }
   // fonction testée sur le bouton "btnLess" en attendant le bouton pour supprimer complètement
-  btnLess.addEventListener("click", (()=>{
-	  removeProductFromCart("6005") // correspond à "La Métamorphose"
-	  console.log(cart)
-  })) 
 
 
 function decreaseQuantity(refProduct){ 
