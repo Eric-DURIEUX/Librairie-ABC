@@ -87,26 +87,24 @@ fetch('assets/js/books.json')
 	}); // addToCart
 
 	let showProductInCart = (refProduct) => {
-	
-	let articleContent;
 	let articleInCart = document.querySelector('#articleInCart');
+	let articleContent;
 		
 		cart.forEach((item, index)=>{
-				articleContent += `
-					<div>
-						<p class="m-0"><span class="idCart">${item[0]}</span></p>
-			            <div class="d-flex align-item-center mb-5">
-			                <h5 class="m-0">
-			                    <span class="qtCart">Quantité : ${item[1]} </span>
-			                    <img src="assets/img/iconPlus.png" class="btnPlus" data-id="${item[0]}">
-			                    <img src="assets/img/iconMoins.png" class="btnLess" data-id="${item[0]}">
-			                </h5>
-			            </div>
-		            </div>`; 
+			articleContent += `
+				<div>
+					<p class="m-0"><span class="idCart">${item[0]}</span></p>
+		            <div class="d-flex align-item-center mb-5">
+		                <h5 class="m-0">
+		                    <span class="qtCart">Quantité : ${item[1]} </span>
+		                    <img src="assets/img/iconPlus.png" class="btnPlus" data-id="${item[0]}">
+		                    <img src="assets/img/iconMoins.png" class="btnLess" data-id="${item[0]}">
+		                </h5>
+		            </div>
+	            </div>`; 
 		}) // forEach
 
 		articleInCart.innerHTML = articleContent;
-
     } // show
 
 	// function to show the badge on cart
@@ -118,7 +116,8 @@ fetch('assets/js/books.json')
 
 /******* PARTIE SOLENE *******/
 	function clearCart() {
-	  cart = []
+		articleInCart.innerHTML = '';
+	  	cart = []
 	}
 
 	function decreaseQuantity(refProduct){ 
@@ -157,7 +156,7 @@ fetch('assets/js/books.json')
 	}
 
 /////////////// ADD FUNCTION TO BUTTON //////////////////
-	// add to car	
+	// add to cart
 	let addBtn = document.querySelectorAll('.add'); // tous les bouttons add
 	let idCart = document.querySelectorAll('idCart');
 	for (let i = 0; i < addBtn.length; i++) {
@@ -194,6 +193,7 @@ fetch('assets/js/books.json')
 	btnDeleteAll.addEventListener('click', ()=>{
 		clearCart();
 		badgeCart();
+
 		console.log(cart)
 	})
 
