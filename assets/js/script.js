@@ -24,13 +24,13 @@ fetch('assets/js/books.json')
 	.then(response => response.json())
 	.then((jsonBooks) => {
 		// récupération des données JSON
->>>>>>> origin/eric
+// >>>>>>> origin/eric
 		let histoireData = jsonBooks.histoire;
 		let litteratureData = jsonBooks.litterature;
 		let scienceData = jsonBooks.science;
 		let policierData = jsonBooks.policier;
 		let jeunesseData = jsonBooks.jeunesse;
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
 		let ulContent = (bookData, bookList) => {
 			bookData.map((book) => {
