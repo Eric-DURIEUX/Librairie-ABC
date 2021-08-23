@@ -5,6 +5,15 @@ cart : un tableau d'objets contenant les produits choisis.
 
 Fonctions à coder :
 
+# function getProduct(ref){
+    // retourne un objet produit (dont la ref est 'refProduct')
+}
+
+# function addProductToCart(refProduct){
+    // ajoute un produit au panier (dont la ref est 'refProduct') si il n'est pas présent. Sinon, on
+     appelle la fonction increaseQuantity(refProduct) si le produit existe déjà
+}
+
 function getProducts(category){
     // retourne un tableau de tous les produits du catalog dont la categorie est passés en paramètre. Si pas de categorie, on ne filtre pas.
 }
@@ -57,7 +66,10 @@ function createLineInModal(id){
 function getQuantity(refProduct){
     // retourne la quantité d'un produit du panier
 }
+<<<<<<< HEAD
+=======
 
 function getProduct(ref){
     // retourne un objet produit (dont la ref est 'refProduct')
 }
+>>>>>>> fea82d99d9b900f7539f9e7a97d9d0e168e8b654
